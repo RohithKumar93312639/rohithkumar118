@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Rohith Kumar's personal developer portfolio">
+  <title>Rohith Kumar | Developer Portfolio</title>
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:85px}
+    body{font-family:"Segoe UI",Arial,sans-serif;background:#0b1120;color:#e5e7eb;line-height:1.7}
+    :root{--navy:#0b1120;--card:#151f32;--orange:#ff8c42;--gray:#a0aec0}
+    a{color:inherit;text-decoration:none}
+    .container{width:90%;max-width:1100px;margin:auto}
+    .section{padding:90px 0}
+    .section-title{text-align:center;font-size:32px;margin-bottom:45px}
+    .section-title span,.hero h1 span,footer span{color:var(--orange)}
+    header{position:sticky;top:0;z-index:1000;background:rgba(11,17,32,.96);backdrop-filter:blur(12px);border-bottom:1px solid #263249}
+    nav{min-height:75px;display:flex;align-items:center;justify-content:space-between}
+    .logo{color:var(--orange);font-size:25px;font-weight:700}
+    .nav-links{display:flex;list-style:none;gap:30px}
+    .nav-links a{color:var(--gray);transition:color .25s}
+    .nav-links a:hover{color:var(--orange)}
+    .menu-btn{display:none;background:none;border:0;color:white;font-size:28px;cursor:pointer}
+    .hero{min-height:85vh;display:flex;align-items:center}
+    .hero-content{max-width:750px}
+    .hero h3{color:var(--orange);font-size:20px;margin-bottom:15px}
+    .hero h1{font-size:clamp(40px,7vw,68px);line-height:1.15;margin-bottom:20px}
+    .hero p{max-width:600px;color:var(--gray);font-size:18px;margin-bottom:30px}
+    .btn,.outline-btn{display:inline-block;padding:13px 27px;border-radius:6px;font-weight:700;transition:.25s}
+    .btn{background:var(--orange);color:#111827}
+    .btn:hover{background:#ffab70;transform:translateY(-3px)}
+    .outline-btn{border:1px solid var(--orange);color:var(--orange);margin-left:12px}
+    .outline-btn:hover{background:var(--orange);color:#111827}
+    .about-content{display:grid;grid-template-columns:1fr 2fr;gap:50px;align-items:center}
+    .about-box{background:var(--card);border:1px solid #29354a;padding:35px;border-radius:12px;text-align:center}
+    .about-initial{width:130px;height:130px;margin:auto;display:grid;place-items:center;border-radius:50%;background:#263249;color:var(--orange);font-size:42px;font-weight:700}
+    .about-text h3{font-size:25px;margin-bottom:15px}
+    .about-text p{color:var(--gray);margin-bottom:15px}
+    .skills-grid,.projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+    .skill-card,.project-card{background:var(--card);border:1px solid #29354a;padding:25px;border-radius:10px;transition:.25s}
+    .skill-card:hover,.project-card:hover{border-color:var(--orange);transform:translateY(-5px)}
+    .skill-card h3{color:var(--orange);margin-bottom:10px}
+    .skill-card p,.project-card p{color:var(--gray)}
+    .project-number{color:var(--orange);font-size:30px;font-weight:700}
+    .project-card h3{margin:12px 0}
+    .project-card p{margin-bottom:20px}
+    .project-tech{color:var(--orange);font-size:13px;margin-bottom:18px}
+    .project-link{color:var(--orange);font-weight:700}
+    .contact-content{max-width:650px;margin:auto;text-align:center}
+    .contact-content>p,.contact-details{color:var(--gray)}
+    .contact-content>p{margin-bottom:25px}
+    .contact-details{margin-top:25px;overflow-wrap:anywhere}
+    footer{text-align:center;padding:25px;border-top:1px solid #263249;color:var(--gray)}
+    @media(max-width:768px){
+      .menu-btn{display:block}
+      .nav-links{display:none;position:absolute;top:75px;left:0;width:100%;background:#151f32;flex-direction:column;text-align:center;padding:25px;gap:20px}
+      .nav-links.active{display:flex}
+      .about-content{grid-template-columns:1fr}
+      .skills-grid{grid-template-columns:repeat(2,1fr)}
+      .projects-grid{grid-template-columns:1fr}
+      .hero{min-height:75vh}
+    }
+    @media(max-width:480px){
+      .skills-grid{grid-template-columns:1fr}
+      .hero h1{font-size:40px}
+      .outline-btn{margin:12px 0 0}
+      .section{padding:65px 0}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container" aria-label="Main navigation">
+      <a href="#home" class="logo">&lt;Rohith/&gt;</a>
+      <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false" aria-controls="navLinks">☰</button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li><li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="hero container" id="home">
+      <div class="hero-content">
+        <h3>Hello, I'm Rohith Kumar</h3>
+        <h1>Building Ideas Into <span>Digital Reality.</span></h1>
+        <p>I'm an aspiring software developer passionate about programming, technology, and creating meaningful digital experiences.</p>
+        <a href="#projects" class="btn">View My Work</a>
+        <a href="#contact" class="outline-btn">Contact Me</a>
+      </div>
+    </section>
+    <section class="section" id="about">
+      <div class="container">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-content">
+          <div class="about-box"><div class="about-initial">RK</div><h3>Rohith Kumar</h3><p>Learning. Building. Improving.</p></div>
+          <div class="about-text">
+            <h3>A Little About Me</h3>
+            <p>I'm a computer science enthusiast interested in software development and artificial intelligence.</p>
+            <p>I enjoy learning programming languages, understanding how technology works, and developing projects that solve real-world problems.</p>
+            <p>My goal is to become a skilled software engineer and continuously improve my technical abilities.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="skills">
+      <div class="container">
+        <h2 class="section-title">My <span>Skills</span></h2>
+        <div class="skills-grid">
+          <article class="skill-card"><h3>HTML &amp; CSS</h3><p>Creating structured and responsive web pages.</p></article>
+          <article class="skill-card"><h3>Python</h3><p>Programming, problem solving and data analysis.</p></article>
+          <article class="skill-card"><h3>C / C++</h3><p>Programming fundamentals and object-oriented programming.</p></article>
+          <article class="skill-card"><h3>JavaScript</h3><p>Learning interactive web development and frontend programming.</p></article>
+          <article class="skill-card"><h3>MySQL</h3><p>Working with databases and SQL queries.</p></article>
+          <article class="skill-card"><h3>Git &amp; GitHub</h3><p>Learning version control and managing development projects.</p></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="projects">
+      <div class="container">
+        <h2 class="section-title">My <span>Projects</span></h2>
+        <div class="projects-grid">
+          <article class="project-card"><div class="project-number">01</div><h3>Bank Management System</h3><p>A simple banking application featuring account creation, deposits, withdrawals and balance management.</p><div class="project-tech">C | File Handling</div><a href="#" class="project-link">GitHub →</a></article>
+          <article class="project-card"><div class="project-number">02</div><h3>Alarm Clock</h3><p>A programming project that allows users to set an alarm and receive a notification at a specified time.</p><div class="project-tech">C++ | Programming</div><a href="#" class="project-link">GitHub →</a></article>
+          <article class="project-card"><div class="project-number">03</div><h3>Python Data Analysis</h3><p>A beginner data analysis project using Python libraries to process and visualize information.</p><div class="project-tech">Python | Pandas | Matplotlib</div><a href="#" class="project-link">GitHub →</a></article>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact <span>Me</span></h2>
+        <div class="contact-content">
+          <p>Have an interesting project or opportunity? Feel free to get in touch.</p>
+          <a href="mailto:yourname@example.com" class="btn">Send Me an Email</a>
+          <div class="contact-details"><p>Email: yourname@example.com</p><p>GitHub: github.com/yourusername</p><p>LinkedIn: linkedin.com/in/yourusername</p></div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer><p>© 2026 Rohith Kumar. Built with <span>HTML &amp; CSS</span>.</p></footer>
+  <script>
+    const menuBtn=document.getElementById("menuBtn");
+    const navLinks=document.getElementById("navLinks");
+    menuBtn.addEventListener("click",()=>{
+      const isOpen=navLinks.classList.toggle("active");
+      menuBtn.setAttribute("aria-expanded",isOpen);
+      menuBtn.setAttribute("aria-label",isOpen?"Close navigation":"Open navigation");
+      menuBtn.textContent=isOpen?"×":"☰";
+    });
+    document.querySelectorAll(".nav-links a").forEach(link=>{
+      link.addEventListener("click",()=>{
+        navLinks.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded","false");
+        menuBtn.setAttribute("aria-label","Open navigation");
+        menuBtn.textContent="☰";
+      });
+    });
+  </script>
+</body>
+</html>
